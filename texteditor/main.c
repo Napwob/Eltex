@@ -50,8 +50,8 @@ int main(int argc, char* argv[])
   if(argc==1) return 1;
   if(strcmp(argv[1],"--help")==0 || strcmp(argv[1],"-h")==0)
   {
-    printf("  Press F2 to save changes in file\n");
-    printf("  Press F3 to exit without save\n");
+    printf("  Press F1 to save changes in file\n");
+    printf("  Press F2 to exit without save\n");
     return 0;
   }
   initscr();
@@ -87,11 +87,11 @@ int main(int argc, char* argv[])
     int ch = getch();
     switch (ch)
     {
-    case KEY_F(3):
+    case KEY_F(2):
       editbool = false;
       break;
 
-    case KEY_F(2):
+    case KEY_F(1):
       if ((fps = fopen(name, "w+")) == NULL)
         printf("Не удалось открыть файл");
       fprintf(fps, "%s", str);
